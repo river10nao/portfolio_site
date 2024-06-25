@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <!-- Googleフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="./assets/css/common.css">
+  <!-- スターウォーズ -->
+  <!-- <link rel="stylesheet" href="./assets/css/starwarsintro.css"> -->
+  <!-- スタイル -->
+  <link rel="stylesheet" href="./assets/css/top.css">
+  <title>Nao Motokawa Portfolio</title>
+</head>
+<body>
+  <!-- カーソル -->
+  <div id="cursor"></div>
+  <div id="stalker"></div>
+  <!-- ローダー -->
+  <!-- <div class="loader__wrap">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <p class="Cormoran">Now Loading...</p>
+    </div>
+  </div> -->
+
+  <header>
+    <div class="logo">
+      <a href="./index.html#top">
+        <img src="./assets/images/logo_white.svg" alt="Website Logo">
+      </a>
+    </div>
+    <button class="trigger">
+      <span class="bar bar--1"></span>
+      <span class="bar bar--2"></span>
+    </button>
+    <nav class="gnav Lora">
+      <ul class="gnav__list">
+        <li class="gnav__item"><a href="./index.html#top">Top</a></li>
+        <li class="gnav__item"><a href="./profile/">Profile</a></li>
+        <li class="gnav__item"><a href="./index.html#work">Work</a></li>
+        <li class="gnav__item"><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>  
+    <!-- TOPボタン -->
+    <div class="btn2">
+      <a href="#"></a>
+    </div>
+    <section id="top" class="key-visual">
+      <!-- 星空 -->
+      <div id="particles-js"></div>
+      <div id="wrapper">
+        <div class="key-visual-text">
+          <p class="Cormoran js__fadein">Hello.My name is</p>
+          <h1>
+            <div class="line">
+              <span>M</span><span>O</span><span>T</span><span>O</span>
+            </div>
+            <div class="line">
+              <span>K</span><span>A</span><span>W</span><span>A</span>
+            </div>
+            <div class="line">
+              <span>N</span><span>A</span><span>O</span>
+            </div>
+          </h1>
+          <p class="Cormoran js__fadein">This is my portfolio website.<br>Thank you for visiting.</p>
+        </div>
+        <!-- トップ画面スクロール -->
+        <div class="scrolldown black"><span>Scroll</span></div>
+      </div>
+      
+    </section>
+    <section class="about section__bg white">
+      <div class="inner">
+        <h2 class="about-title">About me</h2>
+        <div class="about__wrap">
+          <div class="about-text">
+            <p class="font-20">本川 奈央 _Nao Motokawa</p>
+            <p>
+              1996/01/01 香川県出身 兵庫県在住<br>短大を卒業後、4社経験し、前職ではNTTで約4年間法人営業に従事。2023年11月から、創造社リカレントスクールへ入学し、Webデザイン、動画編集、コーディングについて学ぶ。技術面でのスキルアップを追求すること、Web制作を通してお客様のビジネスの成長に貢献することが目標。
+            </p>
+            <p>
+              Like: 旅行 | Netflix | 焼肉 
+            </p>
+            <div class="btn1">
+              <a href="./profile/">View More</a>
+            </div>
+          </div>
+          <div class="about-img">
+            <div class="about-img__wrap">
+              <img src="./assets/images/top_about.jpg" alt="顔写真">
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-loop Lora__italic">
+        <span class="text-loop__item">Building a bridge between the web and clients.&nbsp;</span>
+        <span class="text-loop__item" aria-hidden="true">Building a bridge between the web and clients.&nbsp;</span>
+        <span class="text-loop__item" aria-hidden="true">Building a bridge between the web and clients.&nbsp;</span>
+      </p>
+    </section>
+    
+    <section id="work" class="work section__bg black">
+      <div class="inner">
+        <h2>Work</h2>
+        <ul class="work-list">
+          <li class="work-list__item ">
+            <a href="./work_mayumi/">
+              <div class="img-cover hover-dark">
+                <img class="img-zoom" src="./assets/images/work_01.webp" alt="Website-Mockup">
+              </div>
+              <p>まゆみ社会保険労務士事務所 Website</p>
+            </a>
+          </li>
+          <li class="work-list__item ">
+            <a href="./work_portfolio/">
+              <div class="img-cover hover-dark">
+                <img class="img-zoom" src="./assets/images/work_02.webp" alt="Website-Mockup">
+              </div>
+              <p>Portfolio Website</p>
+            </a>
+          </li>
+          <li class="work-list__item ">
+            <a href="./work_cafe/">
+              <div class="img-cover hover-dark">
+                <img class="img-zoom" src="./assets/images/work_03.webp" alt="Website-Mockup">
+              </div>
+              <p>Good day coffee Cafe Website(架空)</p>
+            </a>
+          </li>
+          <li class="work-list__item ">
+            <a href="#work">
+              <div class="img-cover hover-dark">
+                <img class="img-zoom" src="./assets/images/work_04.png" alt="Website-Mockup">
+              </div>
+              <p>LP制作中</p>
+            </a>
+          </li>
+          <li class="work-list__item ">
+            <a href="./work_design/">
+              <div class="img-cover hover-dark">
+                <img class="img-zoom" src="./assets/images/work_05.webp" alt="Website-Mockup">
+              </div>
+              <p>バナー＆グラフィック作品</p>
+            </a>
+          </li>
+          <li class="work-list__item ">
+            <a href="./work_video/">
+              <div class="img-cover hover-dark">
+                <img class="img-zoom" src="./assets/images/work_06.webp" alt="Website-Mockup">
+              </div>
+              <p>PR動画作品</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="contact__wrap section__bg black">
+        <h2>Contact</h2>
+        <form>
+          <p><span>Name※</span><input type="text" name="user_name" required></p>
+          <p><span>Address※</span><input type="email" name="user_mail" required></p>
+          <p><span>Tel※</span><input type="tel" name="user_tel" required></p>
+          <p><span>message</span><textarea name="message"></textarea></p>
+          <p><input class="white" type="submit" value="send"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="black">
+    <nav class="">
+      <ul>
+        <li><a href="./profile/">Profile</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2024 Motokawa Nao. All rights reserved.</p>
+  </footer>
+  <!-- 星空CDN -->
+  <script src="./assets/js/particles.min.js" defer></script>
+  <!-- 星空JS -->
+  <script src="./assets/js/star.js" defer></script>
+  <!-- jQuery(今のところいらない) -->
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+  <!-- ScrollRevealライブラリ -->
+  <script src="https://unpkg.com/scrollreveal" defer></script>
+  <!-- スクロールオブサーバー（環境対策） -->
+  <script src="./assets/js/scroll-polyfill.js" defer></script>
+  <!-- スクロールオブサーバー -->
+  <script src="./assets/js/scroll.js" defer></script>
+  <!-- メインJS -->
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+@charset "utf-8";
+$cWhite: #fefefe;
+// $cWhite: #FFFAFA;
+// $cWhite:  #F0EDE5;
+// $cWhite:  #D3D3D3;
+// $cWhite:  #CCCCCC;
+$cGray: #5b5b5b;
+$cBlack: #1d1d1d;
+
+// ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️共通事項◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️
+body{
+  line-height: 1.6;
+}
+
+// ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️インナー◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .inner {
+    max-width: 1000px;
+    padding-inline: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .inner {
+    max-width: 800px;
+  }
+}
+@media (max-width: 768px) {
+  .inner {
+    max-width: 600px;
+  }
+}
+@media (max-width: 576px) {
+  .inner {
+    max-width: 100%; /* スマホサイズでは最大幅を設定しない */
+    padding: 0 10px; /* パディングを減らす */
+  }
+}
+
+
+
+// ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️フォント◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️
+// フォントサイズ
+body{
+  font-size: calc( 15rem / 16 );
+}
+h2 {
+  font-size: calc( 50rem / 16 );
+}
+.font-20{
+  font-size: calc( 20rem / 16 );
+}
+.font-40{
+  font-size: calc( 40rem / 16 );
+}
+
+
+// スマホ
+@media (max-width: 640px){
+  body{
+    font-size: 14px;
+  }
+  h2{
+    font-size: calc( 30rem / 16 );
+  }
+}
+
+// フォントファミリー
+body {
+  font-family: 'Noto Sans JP', Arial, sans-serif;
+}
+h1, h2{
+  font-family: 'Lora', serif;
+  font-weight: 400;
+}
+h3, h4{
+  font-weight: 400;
+}
+
+.Lora {
+  font-family: 'Lora', serif;
+  &__italic{
+    font-family: 'Lora', serif;
+    font-style: italic; /* イタリックの指定 */
+  }
+}
+.Cormoran {
+  font-family: 'Cormorant Infant', serif;
+  &__italic{
+    font-family: 'Cormorant Infant', serif;
+    font-style: italic; /* イタリックの指定 */
+    &bold{
+      font-family: 'Cormorant Infant', serif;
+      font-style: italic; /* イタリックの指定 */
+      font-weight: 700; /* ウェイトの指定 */
+    }
+  }
+}
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️背景◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️*/
+.black {
+  background-color: $cBlack;
+  color: $cWhite;
+}
+.white{
+  background-color: $cWhite;
+  color: $cBlack;
+}
+.gray{
+  background-color: $cGray;
+  color: $cBlack;
+}
+.section__bg{
+  transition: .5s;
+}
+.section__bg.white {
+  color: $cBlack;
+  background-color: $cWhite;
+}
+.section__bg.white.is-active {
+  color: $cWhite;
+  background-color: $cBlack;
+}
+.section__bg.black {
+  color: $cWhite;
+  background-color: $cBlack;
+}
+.section__bg.black.is-active {
+  color: $cBlack;
+  background-color: $cWhite;
+}
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️固定TOPボタン◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.btn2 a {
+  position: fixed;
+  z-index: 120;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  background-color: $cBlack;
+  border: 1px solid $cWhite;
+  border-radius: 50vh;
+  transition: 0.3s;
+  box-shadow: 0 0 20px 10px rgba(239, 251, 255, 0.107);
+  &::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-top: 3px solid $cWhite;
+    border-left: 3px solid $cWhite;
+    transform: rotate(45deg);
+    transition: 0.3s;
+  }
+}
+.btn2 a:hover {
+  background-color: $cWhite;
+  border: 1px solid $cBlack;
+  &::after{
+    border-top: 3px solid $cBlack;
+    border-left: 3px solid $cBlack;
+    transform: translateY(-5px) rotate(45deg);
+  }
+}
+// ==========スマホ（固定TOPボタン）========
+@media ( max-width: 960px ) {
+  .btn2 a {
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}
+// ホバー時アニメーション消す
+@media (max-width: 960px) {
+  .btn2 a:hover {
+    background-color: $cBlack; 
+    border: 1px solid $cWhite; 
+    &::after {
+      border-top: 3px solid $cWhite; 
+      border-left: 3px solid $cWhite;
+      transform: rotate(45deg); 
+    }
+  }
+}
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️マウスカーソル◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+html,body,a,button,input,.btn2{
+  cursor: none !important;
+}
+#cursor{
+  pointer-events: none;
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: rgb(255, 255, 255);
+  mix-blend-mode: difference;
+  transform: translate(-100px,-100px);
+  border-radius: 50%;
+  z-index: 999;
+}
+#stalker {
+  pointer-events: none;
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  // background: rgba(255, 255, 255, 0.8);
+  border: 2px solid $cWhite;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  transform: translate(-100px,-100px);
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  z-index: 998;
+}
+#stalker.hov_{
+  top: -40px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  transition: .15s;
+  // background: rgba(134, 134, 134, 0.534);
+  background-color: $cWhite;
+  z-index: 997;
+}
+/* work-list__item内のaタグにホバーした時のスタイル */
+#stalker.work-item-hover {
+  top: -55px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  transition: .15s;
+  border: none;
+  background-color: $cBlack; /* 背景色 */
+  // border: 1px solid $cWhite;
+  box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.381);
+  mix-blend-mode: normal;
+  color: $cWhite; /* 文字色 */
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after{
+    content: "View";
+    color: #fff;
+    font-size: 12px;
+  }
+}
+// レスポンシブ用（カーソルを消す）
+@media (max-width: 960px) {
+  #stalker.work-item-hover {
+    display: none !important;
+  }
+}
+@media ( max-width: 960px ){
+  #cursor, #stalker{
+      display: none;
+  }
+}
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️タイトルライン◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.title__line {
+  display: inline-block;
+  width: 150px;
+  height: 2px;
+  margin: 8px 0;
+  background-color: $cWhite;
+  mix-blend-mode: difference;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.3s cubic-bezier(0.40, 0, 0.20, 0.98) 0.3s;
+  &.inview{
+    transform: scaleX(1);
+  }
+}
+// スマホ
+@media ( max-width: 780px ) {
+  .title__line{
+  display: inline-block;
+  width: 80px;
+  height: 1px;
+  margin: 6px 0;
+  }
+}
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️JS ブラーアニメーション◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️*/
+.js__blur{
+  transition: filter 0.5s ease-in-out 0.2s;
+  filter: blur(8px);
+  &.inview{
+    filter: blur(0px);
+  }
+}
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️JS フェードイン アニメーション◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️*/
+.js__fadein{
+  transition: all 0.7s ease-in-out 0.5s;
+  opacity: 0;
+  &.inview{
+    opacity: 1;
+  }
+}
+
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ヘッダー◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️*/
+header {
+  font-size: calc( 16rem / 16 );
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+  z-index: 1000;
+  color: #fff;
+  mix-blend-mode: difference;
+  .gnav .gnav__list {
+    display: flex;
+    gap: 50px;
+  }
+  .logo img {
+  height: 30px;
+  width: auto;
+  }
+}
+// スマホ時
+@media ( max-width: 640px ){
+  header{
+    padding: 30px 30px;
+    .logo img {
+    height: 23px;
+    width: auto;
+    }
+  }
+}
+
+
+// ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ハンバーガーメニュー◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ 
+// ====================ハンバーガーボタン===================
+.trigger {
+  display: none;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+// ボタンのスタイル消去
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer; 
+  outline: none;
+}
+// ========通常時========
+@media ( max-width: 640px ) {
+  .trigger {
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+    position: absolute;
+    right: 30px;
+    .bar {
+      display: block;
+      width: 30px;
+      height: 2px;
+      background-color: $cWhite;
+      transition: 0.4s ease-in-out;
+      &--1 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+// ========オープン時========
+@media ( max-width: 640px ) {
+  .open .bar--1 {
+    margin-bottom: 0;
+    transform: rotate(-45deg);
+  }
+  .open .bar--2 {
+    transform: rotate(45deg);
+  }
+}
+
+// =======================gnav中身==========================
+// ========通常時========
+@media ( max-width: 640px ) {
+  .gnav {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+// ========オープン時========
+@media ( max-width: 640px ) {
+  .open {
+    overflow: hidden;
+
+    header {
+      mix-blend-mode: normal;
+
+      .gnav {
+        display: block;
+        background-color: $cWhite;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 100px 50px;
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+
+        &__list {
+          flex-direction: column;
+          color: $cBlack;
+          font-size: calc( 50rem / 16 );
+
+          .gnav__item {
+            position: relative;
+            opacity: 0;
+            transition: 0.4s ease-in-out;
+            animation: fadein1 1s ease-in-out forwards;
+            &::after {
+              content: "";
+              position: absolute;
+              top: 1.8em;
+              left: 0;
+              background-color: $cBlack;
+              height: 1px;
+              width: 80%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadein1 {
+  0% {
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️フッター◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️*/
+footer {
+  border-top: 0.1px solid $cGray;
+  height: 160px;
+  nav{
+    display: flex;
+    justify-content: end;
+    font-size: calc( 14rem / 16 );
+    ul{
+      display: flex;
+      padding: 50px 50px 50px 0;
+      gap: 20px;
+    }
+  }
+  p{
+    font-size: calc( 10rem / 16 );
+    color: $cGray;
+    padding-left: 50px;
+    padding-bottom: 20px;;
+  }
+}
+@media ( max-width: 640px ) {
+  footer {
+    nav{
+      font-size: calc( 13rem / 16 );
+      ul{
+        padding: 30px 30px 50px 0;
+        gap: 30px;
+      }
+    }
+    p{
+      text-align: center;
+      padding-left: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️パララックスフッター◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+// パララックス用ダミー
+.parallax__footer{
+  height: 160px;
+  position: static;
+  z-index: -100;
+}

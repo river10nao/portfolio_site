@@ -1,0 +1,353 @@
+$cWhite: #fefefe;
+$cGray: #5b5b5b;
+$cBlack: #1d1d1d;
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️プロフィール◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.profile{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  &__wrap{
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%,-50%);
+
+    p{
+      width: 80%;
+      margin: 30px auto 0 auto;
+      line-height: 2;
+    }
+  }
+}
+.profile__block{
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  &-img{
+    width: 250px;
+    height: 250px;
+    img{
+      object-fit: cover;
+    }
+  }
+  &-text{
+    h1{
+      display: inline-block;
+      font-size: calc( 60rem / 16 );
+      line-height: 1.4;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background-color: #000;
+        animation: profile-underline 1s ease 0.5s forwards;
+      }
+      
+    }
+    h3{
+      font-size: calc( 30rem / 16 );
+      margin-top: 50px;
+      line-height: 1;
+      text-align: center;
+      span{
+        font-size: calc( 16rem / 16 );
+      }
+    }
+  }
+}
+@keyframes profile-underline {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+// スマホ
+@media ( max-width: 780px ) {
+  .profile{
+    height: 100vh;
+    width: 100%;
+
+    &__wrap{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+      p{
+        width: auto;
+        margin: 10px 20px 0 20px;
+        font-size: calc( 13rem / 16 );
+        line-height: 1.8;
+      }
+    }
+  }
+
+  .profile__block{
+    display: block;
+    &-img{
+      // width: 120px;
+      // height: 120px;
+      // margin: 0 auto;
+      display: none;
+    }
+    &-text{
+      text-align: center;
+      h1{
+        display: inline-block;
+        font-size: calc( 40rem / 16 );
+        padding-top: 0;
+        &::after{
+          height: 1px;
+        }
+      }
+      h3{
+        font-size: calc( 16rem / 16 );
+        margin-top: 0;
+        padding: 8px 0;
+        line-height: 1.2;
+        span{
+          font-size: calc( 12rem / 16 );
+        }
+      }
+    }
+  }
+}
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️パララックス◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.parallax__profile{
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: static;
+  z-index: -100;
+}
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️スキル◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+// 大枠
+.skill{
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+
+  &__wrap{
+    display: flex;
+    gap: 8%;
+  }
+}
+// SKILL文字
+.skill h2{
+  writing-mode: vertical-rl;
+  font-size: clamp( 200px,30vw,300px );
+  line-height: 0.7;
+  padding-top: 85px;
+  background: linear-gradient(30deg, #424242, #212121);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+// 私のできること ブロック
+.skill__block{
+  padding: 200px 8% 200px 0;
+  h3{
+    font-size: calc( 25rem / 16 );
+  }
+}
+// スキルネーム
+.skill__name{
+  line-height: 1.2;
+  margin-bottom: 15px;
+  .sub-name{
+    font-size: calc( 14rem / 16 );
+  }
+  .main-name{
+    font-size: calc( 60rem / 16 );
+  }
+}
+// アイテム
+.skill__item{
+  margin-top: 100px;
+  max-width: 800px;
+  p{
+    line-height: 2;
+  }
+  & + & {
+    margin-top: 80px;
+  }
+}
+// ツール
+.skill__tool{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+  span{
+    color: $cWhite;
+    border: 1px solid $cWhite;
+    border-radius: 20px;
+    padding: 5px 30px;
+    mix-blend-mode: difference;
+  }
+}
+// スマホ
+@media ( max-width: 780px ) {
+  .skill__wrap{
+    display: block;
+    padding: 80px 0;
+  }
+  // SKILL
+  .skill h2{
+    writing-mode: initial;
+    font-size: calc( 80rem / 16 );
+    line-height: 1;
+    padding-top: 0;
+    padding-left: 30px;
+    background: linear-gradient(150deg, #5b5a5a, #1d1d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+  // 私のできること
+  .skill__block{
+    padding: 0;
+    h3{
+      font-size: calc( 16rem / 16 );
+      padding-left: 70px;
+    }
+  }
+  // スキルネーム
+  .skill__name{
+    margin-bottom: 10px;
+    .sub-name{
+      font-size: calc( 12rem / 16 );
+    }
+    .main-name{
+      font-size: calc( 35rem / 16 );
+    }
+  }
+  // アイテム
+  .skill__item{
+    margin: 70px 30px 0 30px;
+    width: auto;
+  }
+  // ツール
+  .skill__tool{
+    gap: 5px;
+    margin: 20px 0;
+    span{
+      border: 0.7px solid $cWhite;
+      padding: 5px 20px;
+    }
+  }
+}
+
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️強み◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+// タイトル
+.strengths{
+  padding: 150px 0;
+  position: relative;
+  z-index: 4;
+  h2{
+    text-align: center;
+  }
+  h3{
+    font-size: calc( 25rem / 16 );
+    text-align: center;
+    margin-bottom: 80px;
+  }
+}
+// カードリスト
+.strengths__list{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  .strengths__item{
+    width: 310px;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.373);
+    background-color: rgba(198, 198, 198, 0.1);
+    backdrop-filter: blur(5px);
+  }
+}
+// コンテンツ
+.strengths__cnt{
+  .strengths__number{
+    font-size: calc( 80rem / 16 );
+    opacity: 0.2;
+    text-align: right;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  h4{
+    font-size: calc(18rem / 16 );
+    margin-bottom: 20px;
+  }
+  p{
+    line-height: 1.8;
+  }
+}
+// コンテンツ内ブラーアニメーション
+.strengths__cnt{
+  transition: filter 0.4s ease-in-out 0.4s;
+  filter: blur(10px);
+  &.inview{
+    filter: blur(0px);
+  }
+}
+// スマホ
+@media ( max-width: 780px ) {
+  .strengths{
+    padding: 100px 0;
+    h2{
+      font-size: calc( 40rem / 16 );
+    }
+    h3{
+      font-size: calc( 16rem / 16 );
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .strengths__cnt{
+      .strengths__number{
+        font-size: calc( 60rem / 16 );
+        margin-bottom: 5px;
+      }
+      h4{
+        font-size: calc(16rem / 16 );
+      }
+    }
+  }
+}
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️パララックスフッター◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+// パララックス用ダミー
+.parallax__footer{
+  height: 160px;
+  position: static;
+  z-index: -100;
+}

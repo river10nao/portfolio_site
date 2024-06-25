@@ -1,0 +1,325 @@
+@charset "UTF-8";
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️プロフィール◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.profile {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+}
+.profile__wrap {
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+.profile__wrap p {
+  width: 80%;
+  margin: 30px auto 0 auto;
+  line-height: 2;
+}
+
+.profile__block {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+.profile__block-img {
+  width: 250px;
+  height: 250px;
+}
+.profile__block-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile__block-text h1 {
+  display: inline-block;
+  font-size: 3.75rem;
+  line-height: 1.4;
+  position: relative;
+}
+.profile__block-text h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #000;
+  animation: profile-underline 1s ease 0.5s forwards;
+}
+.profile__block-text h3 {
+  font-size: 1.875rem;
+  margin-top: 50px;
+  line-height: 1;
+  text-align: center;
+}
+.profile__block-text h3 span {
+  font-size: 1rem;
+}
+
+@keyframes profile-underline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@media (max-width: 780px) {
+  .profile {
+    height: 100vh;
+    width: 100%;
+  }
+  .profile__wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+  }
+  .profile__wrap p {
+    width: auto;
+    margin: 10px 20px 0 20px;
+    font-size: 0.8125rem;
+    line-height: 1.8;
+  }
+  .profile__block {
+    display: block;
+  }
+  .profile__block-img {
+    display: none;
+  }
+  .profile__block-text {
+    text-align: center;
+  }
+  .profile__block-text h1 {
+    display: inline-block;
+    font-size: 2.5rem;
+    padding-top: 0;
+  }
+  .profile__block-text h1::after {
+    height: 1px;
+  }
+  .profile__block-text h3 {
+    font-size: 1rem;
+    margin-top: 0;
+    padding: 8px 0;
+    line-height: 1.2;
+  }
+  .profile__block-text h3 span {
+    font-size: 0.75rem;
+  }
+}
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️パララックス◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.parallax__profile {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: static;
+  z-index: -100;
+}
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️スキル◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.skill {
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+}
+.skill__wrap {
+  display: flex;
+  gap: 8%;
+}
+
+.skill h2 {
+  writing-mode: vertical-rl;
+  font-size: clamp(200px, 30vw, 300px);
+  line-height: 0.7;
+  padding-top: 85px;
+  background: linear-gradient(30deg, #424242, #212121);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skill__block {
+  padding: 200px 8% 200px 0;
+}
+.skill__block h3 {
+  font-size: 1.5625rem;
+}
+
+.skill__name {
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+.skill__name .sub-name {
+  font-size: 0.875rem;
+}
+.skill__name .main-name {
+  font-size: 3.75rem;
+}
+
+.skill__item {
+  margin-top: 100px;
+  max-width: 800px;
+}
+.skill__item p {
+  line-height: 2;
+}
+.skill__item + .skill__item {
+  margin-top: 80px;
+}
+
+.skill__tool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+.skill__tool span {
+  color: #fefefe;
+  border: 1px solid #fefefe;
+  border-radius: 20px;
+  padding: 5px 30px;
+  mix-blend-mode: difference;
+}
+
+@media (max-width: 780px) {
+  .skill__wrap {
+    display: block;
+    padding: 80px 0;
+  }
+  .skill h2 {
+    writing-mode: initial;
+    font-size: 5rem;
+    line-height: 1;
+    padding-top: 0;
+    padding-left: 30px;
+    background: linear-gradient(150deg, #5b5a5a, #1d1d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+  .skill__block {
+    padding: 0;
+  }
+  .skill__block h3 {
+    font-size: 1rem;
+    padding-left: 70px;
+  }
+  .skill__name {
+    margin-bottom: 10px;
+  }
+  .skill__name .sub-name {
+    font-size: 0.75rem;
+  }
+  .skill__name .main-name {
+    font-size: 2.1875rem;
+  }
+  .skill__item {
+    margin: 70px 30px 0 30px;
+    width: auto;
+  }
+  .skill__tool {
+    gap: 5px;
+    margin: 20px 0;
+  }
+  .skill__tool span {
+    border: 0.7px solid #fefefe;
+    padding: 5px 20px;
+  }
+}
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️強み◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.strengths {
+  padding: 150px 0;
+  position: relative;
+  z-index: 4;
+}
+.strengths h2 {
+  text-align: center;
+}
+.strengths h3 {
+  font-size: 1.5625rem;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.strengths__list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.strengths__list .strengths__item {
+  width: 310px;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.373);
+  background-color: rgba(198, 198, 198, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.strengths__cnt .strengths__number {
+  font-size: 5rem;
+  opacity: 0.2;
+  text-align: right;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.strengths__cnt h4 {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+}
+.strengths__cnt p {
+  line-height: 1.8;
+}
+
+.strengths__cnt {
+  transition: filter 0.4s ease-in-out 0.4s;
+  filter: blur(10px);
+}
+.strengths__cnt.inview {
+  filter: blur(0px);
+}
+
+@media (max-width: 780px) {
+  .strengths {
+    padding: 100px 0;
+  }
+  .strengths h2 {
+    font-size: 2.5rem;
+  }
+  .strengths h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .strengths .strengths__cnt .strengths__number {
+    font-size: 3.75rem;
+    margin-bottom: 5px;
+  }
+  .strengths .strengths__cnt h4 {
+    font-size: 1rem;
+  }
+}
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️パララックスフッター◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.parallax__footer {
+  height: 160px;
+  position: static;
+  z-index: -100;
+}/*# sourceMappingURL=profile.css.map */

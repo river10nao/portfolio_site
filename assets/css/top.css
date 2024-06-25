@@ -1,0 +1,569 @@
+@charset "UTF-8";
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ローダー◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.loader__wrap {
+  height: 100vh;
+  width: 100%;
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 5000;
+}
+.loader p {
+  color: #1d1d1d;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.loader span {
+  position: absolute;
+  border: 1px solid #1d1d1d;
+  width: 100%;
+  height: 100%;
+  animation: kf-loader 5s linear infinite;
+}
+.loader span:nth-child(1) {
+  border-radius: 27% 73% 30% 70%/75% 20% 80% 25%;
+}
+.loader span:nth-child(2) {
+  animation-direction: reverse;
+  border-radius: 68% 32% 18% 82%/53% 49% 51% 47%;
+}
+.loader span:nth-child(3) {
+  animation-delay: 3s;
+  border-radius: 27% 73% 30% 70%/43% 47% 53% 57%;
+}
+
+@keyframes kf-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️キービジュアル◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.key-visual {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.key-visual-text {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+.key-visual-text h1 {
+  line-height: 1.2;
+  font-size: clamp(90px, 7.5vw, 150px);
+  color: #fefefe;
+}
+.key-visual-text h1 .line {
+  display: flex;
+  justify-content: left;
+}
+.key-visual-text h1 .line span.inview {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.4s ease-in-out forwards;
+}
+.key-visual-text h1 .line:nth-child(1) span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.key-visual-text h1 .line:nth-child(1) span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.key-visual-text h1 .line:nth-child(1) span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.key-visual-text h1 .line:nth-child(1) span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.key-visual-text h1 .line:nth-child(2) span:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.key-visual-text h1 .line:nth-child(2) span:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.key-visual-text h1 .line:nth-child(2) span:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.key-visual-text h1 .line:nth-child(2) span:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.key-visual-text h1 .line:nth-child(3) span:nth-child(1) {
+  animation-delay: 0.9s;
+}
+.key-visual-text h1 .line:nth-child(3) span:nth-child(2) {
+  animation-delay: 1s;
+}
+.key-visual-text h1 .line:nth-child(3) span:nth-child(3) {
+  animation-delay: 1.1s;
+}
+.key-visual-text p {
+  font-size: 2.1875rem;
+  color: #fefefe;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*スクロールダウン全体の場所*/
+.scrolldown {
+  /*描画位置※位置は適宜調整してください*/
+  position: absolute;
+  right: 5%;
+  bottom: 30%;
+  /*全体の高さ*/
+  height: 50px;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown span {
+  /*描画位置*/
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  /*テキストの形状*/
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  writing-mode: vertical-rl;
+}
+
+/* 線の描写 */
+.scrolldown::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -20px;
+  width: 2px;
+  height: 150px;
+  background: linear-gradient(-20deg, #fefefe 0%, #1d1d1d 100%);
+  border-radius: 50px;
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity: 1;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove {
+  0% {
+    scale: 1 0;
+    transform-origin: center top;
+  }
+  50% {
+    scale: 1 1;
+    transform-origin: center top;
+  }
+  51% {
+    transform-origin: center bottom;
+  }
+  100% {
+    scale: 1 0;
+    transform-origin: center bottom;
+  }
+}
+#particles-js {
+  position: fixed; /*描画固定*/
+  z-index: -1; /*描画を一番下に*/
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d; /*背景色*/
+}
+
+#wrapper {
+  position: relative; /*描画を#particles-jsよりも上にするためposition:relative;を指定*/
+  z-index: 1; /*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+  width: 100%;
+  height: 100%;
+}
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️About◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.about-title {
+  margin: 40px auto;
+}
+
+.about {
+  padding-top: 100px;
+}
+
+.about__wrap {
+  display: flex;
+  gap: 3%;
+}
+.about__wrap .about-text {
+  margin: auto 0;
+  padding: 20px 30px;
+}
+.about__wrap .about-text p {
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.about__wrap .about-img__wrap {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+.about__wrap .about-img__wrap img {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: -30px 0px;
+     object-position: -30px 0px;
+  z-index: 2;
+}
+.about__wrap .about-img__wrap::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#444444 30%, rgba(0, 0, 0, 0) 31%), radial-gradient(#444444 30%, rgba(0, 0, 0, 0) 31%);
+  background-size: 6px 6px;
+  background-position: 0 0, 3px 3px;
+  z-index: 1;
+}
+
+.about-title, .about-text, .about-img {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(30px);
+  transition: all 0.6s ease-out;
+}
+.about-title.visible, .about-text.visible, .about-img.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* ===========Aboutボタン=========== */
+.btn1 {
+  display: block;
+  text-align: right;
+  margin: 30px 20px 10px auto;
+  width: 200px;
+  position: relative;
+}
+.btn1 a {
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* =========ボタンアンダーライン======== */
+.btn1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  transition: transform 0.3s ease-out;
+}
+
+/* ホバー時のアニメーション */
+.btn1:hover::after {
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+/* ホバー解除時のアニメーション */
+.btn1:not(:hover)::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.text-loop {
+  margin-top: 100px;
+  color: rgba(0, 0, 0, 0);
+  font-size: 6.25rem;
+  -webkit-text-stroke: 0.5px #5b5b5b;
+  display: flex;
+  overflow: hidden;
+}
+.text-loop__item {
+  display: inline-block;
+  transform: translateX(0);
+  animation-name: textloop;
+  animation-duration: 45s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  white-space: nowrap;
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes textloop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.work {
+  padding: 100px 0;
+}
+.work h2 {
+  margin-bottom: 30px;
+}
+.work .work-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.work .work-list__item p {
+  display: inline-block;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+.work .work-list__item .img-cover {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+.work .work-list__item .img-cover::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fefefe;
+  opacity: 0;
+}
+.work .work-list__item .img-cover.inview::after {
+  opacity: 1;
+  animation: kf-cover-slide 1.5s ease-in-out forwards;
+}
+.work .work-list__item .img-cover img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: bottom;
+}
+
+.img-zoom {
+  opacity: 0;
+}
+.inview .img-zoom {
+  opacity: 1;
+  transition: transform 0.3s ease;
+  animation: kf-img-show 1.5s ease-in-out none;
+}
+.inview .img-zoom:hover {
+  transform: scale(1.1);
+}
+
+.work-list__item:hover p {
+  border-bottom: 0.7px solid #1d1d1d;
+}
+
+.hover-dark {
+  position: relative;
+}
+.hover-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+}
+
+.work-list:hover li:not(:hover) .hover-dark::before {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@keyframes kf-cover-slide {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50.1% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️Contact◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.contact__wrap {
+  max-width: 800px;
+  width: 100%;
+  margin: 300px auto;
+  padding: 100px;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+.contact h2::after {
+  content: "";
+  position: absolute;
+  background-color: #1d1d1d;
+  height: 4px;
+  width: 60px;
+  top: 1.7em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+form p {
+  max-width: 500px;
+  margin: 0 auto 15px auto;
+}
+form p:nth-child(5) {
+  text-align: center;
+  margin-top: 20px;
+}
+form input:not([type=submit]) {
+  width: 100%;
+}
+form input[type=submit] {
+  padding: 5px 15px;
+}
+form textarea {
+  width: 100%;
+  height: 200px;
+}
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️スマホ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+@media (max-width: 960px) {
+  .key-visual-text {
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+  .key-visual-text h1 {
+    line-height: 1.2;
+    font-size: 5.625rem;
+  }
+  .key-visual-text p {
+    font-size: 1.875rem;
+  }
+}
+@media (max-width: 640px) {
+  .key-visual-text {
+    top: 45%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+  .key-visual-text h1 {
+    line-height: 1.2;
+    font-size: 5.625rem;
+  }
+  .key-visual-text p {
+    font-size: 1.5625rem;
+  }
+}
+@media (max-width: 678px) {
+  .about__wrap {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  .about__wrap .about-img {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 780px) {
+  .text-loop {
+    font-size: 6.25rem;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 950px) {
+  .contact__wrap {
+    max-width: 600px;
+    width: 100%;
+    margin: 150px auto;
+    padding: 80px;
+  }
+}
+@media (max-width: 700px) {
+  .contact {
+    padding-inline: 30px;
+  }
+  .contact__wrap {
+    max-width: 500px;
+    width: 100%;
+    margin: 100px auto;
+    padding: 50px;
+  }
+}
+@media (max-width: 640px) {
+  .contact h2::after {
+    content: "";
+    height: 2px;
+    width: 40px;
+  }
+}
+/* =========ホバーアクション無効化 (960px以下)======== */
+@media (max-width: 960px) {
+  .work-list__item:hover p {
+    border-bottom: none;
+  }
+  .img-zoom:hover {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .work-list:hover li:not(:hover) .hover-dark::before {
+    background-color: transparent;
+  }
+  .btn1:hover::after {
+    transform: none !important;
+  }
+}/*# sourceMappingURL=top.css.map */

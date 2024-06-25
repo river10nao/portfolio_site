@@ -1,0 +1,528 @@
+$cWhite: #fefefe;
+$cGray: #5b5b5b;
+$cBlack: #1d1d1d;
+
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️トップ(タイトル)◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+// タイトル
+.work-title__wrap{
+  h1{
+    font-size: calc( 50rem / 16 );
+    line-height: 1.5;
+    padding-top: 60px;
+  }
+  h2{
+    font-size: calc( 20rem / 16 );
+    line-height: 1.5;
+    margin-bottom: 10px;
+    .title__line{
+      width: 80px;
+      height: 1.2px;
+      margin: 8px 0;
+    }
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  // タイトル
+  .work-title__wrap{
+    padding: 0 20px;
+    h1{
+      font-size: calc( 40rem / 16 );
+      line-height: 1;
+      padding-top: 80px;
+      padding-bottom: 5px;
+    }
+    h2{
+      font-size: calc( 16rem / 16 );
+      margin-bottom: 5px;
+      .title__line{
+        width: 80px;
+        height: 1px;
+        margin: 6px 0;
+      }
+    }
+  }
+}
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️モックアップ（バナー）◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.banner-mockup__wrap {
+  width: auto;
+  height: 70vh;
+  position: relative;
+  
+  .banner-mockup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 270px;
+    z-index: 100;
+    img{
+      animation: kf-float 3s infinite alternate;
+    }
+    // 影
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 5px;
+      background: rgba(0, 0, 0, 0.603);
+      border-radius: 50%;
+      filter: blur(5px);
+      // transform: skew(-20deg, -20deg);
+  }
+
+  }
+  .mockup-title{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    span{
+      font-size: calc( 100rem / 16 );
+      color: $cWhite;
+      -webkit-text-stroke: 1px $cBlack;
+      line-height: 1;
+      animation: kf-color 4s infinite;
+    }
+  }
+}
+// アニメーション
+@keyframes kf-loader {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes kf-float {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px); /* 上に移動 */
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}
+@keyframes kf-color {
+  0%{
+    color: $cWhite;
+  }
+  50%{
+    color: $cWhite;
+  }
+  55%{
+    color: $cBlack;
+  }
+  80%{
+    color: $cWhite;
+  }
+  100%{
+    color: $cWhite;
+  }
+}
+// スマホ
+@media ( max-width: 1000px ){
+  .banner-mockup__wrap {
+    height: 63vh;
+    .banner-mockup {
+      max-width: 250px;
+    }
+    .mockup-title{
+      span{
+        font-size: calc( 80rem / 16 );
+      }
+    }
+  }
+}
+@media ( max-width: 800px ){
+  .banner-mockup__wrap {
+    .banner-mockup {
+      max-width: 230px;
+    }
+    .mockup-title{
+      span{
+        font-size: calc( 60rem / 16 );
+      }
+    }
+  }
+}
+@media ( max-width: 640px ){
+  .banner-mockup__wrap {
+    .banner-mockup {
+      max-width: 180px;
+    }
+    .mockup-title{
+      span{
+        font-size: calc( 37rem / 16 );
+      }
+    }
+  }
+}
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️バナーコンテンツ基本◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+// 基本構造
+.design-cnt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  // コンテンツ同士の間
+  &+&{
+    padding-top: 200px;
+  }
+  .design-img{
+    width: auto;
+    img{
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.402)); /* 影を追加 */
+    }
+  }
+  .design-text{
+    max-width: 100%;
+    h3{
+      font-size: calc( 64rem / 16 );
+    }
+    p{
+      line-height: 1.8;
+      +p{
+        margin-top: 13px;
+      }
+    }
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  .design-cnt{
+    display: block;
+    // コンテンツ同士の間
+    &+&{
+      padding-top: 150px;
+    }
+    .design-img{
+      max-width: 80%;
+      margin: 0 auto;
+      img{
+        filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.378)); /* 影を追加 */
+      }
+    }
+    .design-text{
+      max-width: 100%;
+      margin-top: 10px;
+      padding: 0 20px;
+      h3{
+        font-size: calc( 40rem / 16 );
+      }
+      p{
+        line-height: 1.8;
+        +p{
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+}
+// 奇数を逆にする
+.design-cnt:nth-child(even){
+  flex-direction: row-reverse;
+}
+
+
+/* =========================ヘアケア========================= */
+.design-cnt.haircare{
+  padding-top: 200px;
+  .design-img{
+    width: 440px;
+  }
+  .design-text{
+    max-width: 50%;
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  .design-cnt.haircare{
+    padding-top: 100px;
+    // .design-img{
+    //   width: auto;
+    // }
+    .design-text{
+      max-width: 100%;
+    }
+  }
+}
+
+
+/* =========================インテリア========================= */
+.design-cnt.interior{
+  .design-img{
+    width: 140px;
+  }
+  .design-text{
+    max-width: 50%;
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  .design-cnt.interior{
+    .design-img{
+      width: 110px;
+    }
+    .design-text{
+      max-width: 100%;
+    }
+  }
+}
+
+
+/*=========================カフェ=========================*/
+.design-cnt.cafe{
+  .design-img{
+    width: 440px;
+  }
+  .design-text{
+    max-width: 50%;
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  .design-cnt.cafe{
+    // .design-img{
+    //   width: auto;
+    // }
+    .design-text{
+      max-width: 100%;
+    }
+  }
+}
+
+/* =========================コーヒー========================= */
+.design-cnt.coffee{
+  .design-img{
+    width: 500px;
+  }
+  .design-text{
+    max-width: 40%;
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  .design-cnt.coffee{
+    .design-img{
+      max-width: 90%;
+    }
+    .design-text{
+      max-width: 100%;
+    }
+  }
+}
+
+/* =========================フィットネス========================= */
+.design-cnt.fitness{
+  display: block;
+  .design-img{
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .design-text{
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  .design-cnt.fitness{
+    .design-img{
+      max-width: 100%;
+    }
+    .design-text{
+      max-width: 100%;
+    }
+  }
+}
+
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️モックアップ（グラフィック）◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.graphic-mockup__wrap{
+  width: auto;
+  height: 90vh;
+  position: relative;
+  
+  .graphic-mockup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 400px;
+    z-index: 100;
+    img{
+      animation: kf-float 3s infinite alternate;
+    }
+    // 影
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 55%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 5px;
+      background: rgba(0, 0, 0, 0.603);
+      border-radius: 50%;
+      filter: blur(5px);
+      // transform: skew(-20deg, -20deg);
+  }
+
+  }
+  .mockup-title{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    span{
+      font-size: calc( 100rem / 16 );
+      color: $cWhite;
+      -webkit-text-stroke: 1px $cBlack;
+      line-height: 1;
+      animation: kf-color 4s infinite;
+    }
+  }
+}
+
+// スマホ
+@media ( max-width: 1000px ){
+  .graphic-mockup__wrap{
+    .graphic-mockup {
+      max-width: 400px;
+    }
+    .mockup-title{
+      span{
+        font-size: calc( 80rem / 16 );
+      }
+    }
+  }
+}
+@media ( max-width: 800px ){
+  .graphic-mockup__wrap {
+    .graphic-mockup {
+      max-width: 300px;
+    }
+    .mockup-title{
+      span{
+        font-size: calc( 60rem / 16 );
+      }
+    }
+  }
+}
+@media ( max-width: 640px ){
+  .graphic-mockup__wrap{
+    height: 70vh;
+    .graphic-mockup {
+      max-width: 200px;
+    }
+    .mockup-title{
+      span{
+        font-size: calc( 37rem / 16 );
+      }
+    }
+  }
+}
+
+
+
+/* =========================チラシ（クリスマスマーケット）========================= */
+.design-cnt.flyer{
+  .design-img{
+    width: 500px;
+  }
+  .design-text{
+    max-width: 40%;
+    h3{
+      line-height: 0.8;
+      margin-bottom: 40px;
+    }
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  .design-cnt.flyer{
+    .design-img{
+      max-width: 90%;
+    }
+    .design-text{
+      max-width: 100%;
+      h3{
+        line-height: 0.8;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+/* =========================ショップカード（レストラン）========================= */
+.design-cnt.shopcard{
+  margin-bottom: 150px;
+  .design-img{
+    width: 430px;
+  }
+  .design-text{
+    max-width: 40%;
+  }
+}
+// スマホ
+@media ( max-width: 640px ){
+  .design-cnt.shopcard{
+    .design-img{
+      max-width: 90%;
+    }
+    .design-text{
+      max-width: 100%;
+    }
+  }
+}
+
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️リンク◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+.work-link{
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 0;
+  font-size: calc( 18rem / 16 );
+}
+// スマホ
+@media ( max-width: 640px ){
+  .work-link{
+    padding-top: 0px;
+    font-size: calc( 16rem / 16 );
+  }
+}
+
+
+
+
+
+/* ◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️フッター◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️ */
+footer {
+  position: relative;
+  z-index: 101;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+}
+
+
